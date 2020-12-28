@@ -12,7 +12,6 @@ import projeto.model.JPAUtil;
 public class FlashCardDAO {
 	EntityManager entity = JPAUtil.getEntityManagerFactory().createEntityManager();
 	
-	//Salvar FlashCard
 	public void salvar(FlashCard flashCard) {
 		entity.getTransaction().begin();
 		entity.persist(flashCard);
@@ -20,7 +19,6 @@ public class FlashCardDAO {
 		//JPAUtil.shutdown();
 	}
 	
-	//editar FlashCard
 	public void editar(FlashCard flashCard) {
 		entity.getTransaction().begin();
 		entity.merge(flashCard);
@@ -35,7 +33,6 @@ public class FlashCardDAO {
 		return f;
 	}
 	
-	//excluir FalshCard
 	public void excluir(Long id) {
 		FlashCard f = new FlashCard();
 		f=entity.find(FlashCard.class, id);

@@ -21,22 +21,20 @@ public class FlashCardBean {
 
 	public String novo() {
 		FlashCard f = new FlashCard();
+		
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("flashCard", f);
+		
 		return "novo.xhtml";
 	}
 
 	public String salvar(FlashCard flashCard) {
 		Date hoje = new Date();
-		/*
-		 * Calendar data = Calendar.getInstance(); data.setTime(new Date());
-		 * data.add(Calendar.DAY_OF_MONTH, -1); flashCard.setDataRepet(data.getTime());
-		 */
 		flashCard.setDataRepet(hoje);
+		
 		FlashCardDAO flashCardDAO = new FlashCardDAO();
 		flashCardDAO.salvar(flashCard);
 		
-
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Flashcard cadastrado com sucesso!", ""));
 		
 		return "index.xhtml";
@@ -51,6 +49,7 @@ public class FlashCardBean {
 	public String editar(Long id) {
 		FlashCardDAO flashCardDAO = new FlashCardDAO();
 		FlashCard f = new FlashCard();
+		
 		f = flashCardDAO.buscar(id);
 		System.out.println(f);
 
@@ -87,25 +86,23 @@ public class FlashCardBean {
 		FlashCard f = new FlashCard();
 		Date hoje = new Date();
 		Random random = new Random();
-		// percorrer a list e inserir a revisão as que tem hj como data de revisão
+		
+		// percorrer a list e inserir a revisão as que tem hj ou antes como data de revisão
 		for (int i = 0; i < flashCards.size(); i++) {
 			if (hoje.compareTo(flashCards.get(i).getDataRepet()) > 0) {
 				cardsRevisao.add(flashCards.get(i));
 			}
 		}
-		
+		// Se não tiver cards para revisar informa e redireciona para o index
 		if (cardsRevisao.size() == 0) {
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Sem cards para revisar."));
-			
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Sem cards para revisar", ""));
 			return "index.xhtml";
-		}
-			
-		else 
+		}else 
 			f = cardsRevisao.get(random.nextInt((cardsRevisao.size())));
 			
-
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("flashCard", f);
+		
 		return "revisao.xhtml";
 	}
 
@@ -116,7 +113,6 @@ public class FlashCardBean {
 		switch (flashCard.getNivelAprend()) {
 		case 0:
 			break;
-
 		case 1:
 			data.add(Calendar.DAY_OF_MONTH, 1);
 			break;
@@ -133,8 +129,8 @@ public class FlashCardBean {
 			data.add(Calendar.DAY_OF_MONTH, 30);
 			break;
 		}
-
 		flashCard.setDataRepet(data.getTime());
+		
 		return flashCard;
 	}
 
@@ -153,7 +149,6 @@ public class FlashCardBean {
 		flashCardDAO.editar(flashCard);
 
 		return revisar();
-
 	}
 
 }

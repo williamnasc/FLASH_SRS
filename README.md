@@ -4,7 +4,7 @@ CRUD feito através de JSF, JPA, Hibernate, PostgreSQL e Primefaces
 
 A página permitie ao usuário cadastrar flashcards para memorização inspirados no método de memorização por repetição espaçada (SRS).Os flashcards são compostos principalmente por um termo e sua definição. É possível também revisar os cards, e a depender do seu desenpenho o tempo em que você precisará revisar cada cartão é alterado.
 
-## Itens Implementados
+## Itens implementados
 
 Os itens do desafio implementados no projeto foram:
 
@@ -14,7 +14,7 @@ Os itens do desafio implementados no projeto foram:
 * F. Utilizar Bootstrap 4
 * G. Utilizar Primefaces
 
-## Instruções Para Execução Do Projeto
+## Instruções para execução do projeto
 
 A aplicação foi desenvolvida na plataforma Eclipse IDE com o servidor Apache Tomcat v8.5. Portanto para rodar a aplicação é necessário possuir essas duas tecnologias, adicionar o projeto ao ambiente e rodar com esse servidor. O banco de dados está online, portanto não há muitas preocupações para configurar-lo.
 
