@@ -36,11 +36,8 @@ public class FlashCardBean {
 		FlashCardDAO flashCardDAO = new FlashCardDAO();
 		flashCardDAO.salvar(flashCard);
 		
-<<<<<<< HEAD
+
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Flashcard cadastrado com sucesso!", ""));
-=======
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Salvo com sucesso."));
->>>>>>> f2ec9425e9d9ca8f3dafef5199e251547d074dcb
 		
 		return "index.xhtml";
 	}
@@ -67,11 +64,7 @@ public class FlashCardBean {
 		FlashCardDAO flashCardDAO = new FlashCardDAO();
 		flashCardDAO.editar(flashCard);
 		
-<<<<<<< HEAD
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Flashcard atualizado com sucesso!", ""));
-=======
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Atualizado com sucesso."));
->>>>>>> f2ec9425e9d9ca8f3dafef5199e251547d074dcb
 		
 		return "index.xhtml";
 	}
@@ -82,11 +75,7 @@ public class FlashCardBean {
 		flashCardDAO.excluir(id);
 		System.out.println("Flash Card Excluido");
 		
-<<<<<<< HEAD
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Flashcard excluído com sucesso!", ""));
-=======
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Excluído com sucesso."));
->>>>>>> f2ec9425e9d9ca8f3dafef5199e251547d074dcb
 		
 		return "index.xhtml";
 	}
