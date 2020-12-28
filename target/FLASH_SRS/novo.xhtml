@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+	<h:outputStylesheet name="primeicons/primeicons.css"
+		library="primefaces" />
+
+
+
+
+	<title>Cadastrar Flash Card</title>
+</h:head>
+<h:body style="background-color: rgb(240,240,240);">
+
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+			<!-- Brand/logo -->
+			<a class="navbar-brand" href="index.xhtml">FLASH SRS</a>
+
+			<!-- Links -->
+			<ul class="navbar-nav">
+				<li class="nav-item"><h:form>
+						<p:commandLink class="btn btn-dark "
+							action="#{flashCardBean.novo()}" style="color:white;">
+							<h:outputText value="Novo Flash Card" />
+						</p:commandLink>
+
+					</h:form></li>
+				<li class="nav-item"><h:form>
+						<p:commandLink class="btn btn-dark "
+							action="#{flashCardBean.revisar()}" style="color:white;">
+							<h:outputText value="Revisar Flash Cards" />
+						</p:commandLink>
+					</h:form></li>
+			</ul>
+		</nav>
+
+
+	<center>
+
+		<h1 style="margin-top: 30px;">
+			<h:outputText value="Cadastrar Flash Card"></h:outputText>
+		</h1>
+		<div style="margin-top: 30px; max-width: 1500px; width: 80%;">
+			<h:form>
+				<p:panelGrid columns="2">
+					<f:facet name="header">
+						<h:outputText value="Novo Flash Card"></h:outputText>
+					</f:facet>
+
+					<h:outputText value="Termo: "></h:outputText>
+					<p:inputText required="true" 
+								requiredMessage="Item obrigatório"
+					value="#{flashCard.termo}"></p:inputText>
+
+					<h:outputText value="Definicao: "></h:outputText>
+					<p:inputText required="true" 
+								requiredMessage="Item obrigatório"
+					value="#{flashCard.definicao}"></p:inputText>
+
+					<f:facet name="footer">
+						<center>
+							<h:commandButton class="btn btn-success" value="Salvar"
+								action="#{flashCardBean.salvar(flashCard)}"></h:commandButton>
+						</center>
+					</f:facet>
+				</p:panelGrid>
+			</h:form>
+		</div>
+	</center>
+</h:body>
+</html>

@@ -1,0 +1,4 @@
+projeto\controller\FlashCardBean.class
+projeto\dao\FlashCardDAO.class
+projeto\model\JPAUtil.class
+projeto\model\FlashCard.class

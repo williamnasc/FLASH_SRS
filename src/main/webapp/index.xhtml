@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+	<h:outputStylesheet name="primeicons/primeicons.css"
+		library="primefaces" />
+
+
+	<title>Flash Cards Cadastrados</title>
+</h:head>
+<h:body style="background-color: rgb(240,240,240); ">
+	<center>
+
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+			<!-- Brand/logo -->
+			<a class="navbar-brand" href="index.xhtml">FLASH SRS</a>
+
+			<!-- Links -->
+			<ul class="navbar-nav">
+				<li class="nav-item"><h:form>
+<<<<<<< HEAD
+						<h:commandButton class="btn btn-dark "
+							action="#{flashCardBean.novo()}" style="color:white;"
+							value="Novo Flash Card">
+						</h:commandButton>
+					</h:form></li>
+				<li class="nav-item"><h:form>
+						<h:commandButton class="btn btn-dark "
+							action="#{flashCardBean.revisar()}" style="color:white;"
+							value="Revisar Flash Cards">
+						</h:commandButton>
+=======
+						<p:commandLink class="btn btn-dark "
+							action="#{flashCardBean.novo()}" style="color:white;">
+							<h:outputText value="Novo Flash Card" />
+						</p:commandLink>
+
+					</h:form></li>
+				<li class="nav-item"><h:form>
+						<p:commandLink class="btn btn-dark "
+							action="#{flashCardBean.revisar()}" style="color:white;">
+							<h:outputText value="Revisar Flash Cards" />
+						</p:commandLink>
+>>>>>>> f2ec9425e9d9ca8f3dafef5199e251547d074dcb
+					</h:form></li>
+			</ul>
+		</nav>
+
+<<<<<<< HEAD
+		<center>
+			<p:messages style="margin-top:30px; margin-bottom:20px; width: 80%;"
+				id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+		</center>
+=======
+		<p:messages id="messages" showDetail="true" closable="true">
+			<p:autoUpdate />
+		</p:messages>
+>>>>>>> f2ec9425e9d9ca8f3dafef5199e251547d074dcb
+
+		<h1 style="margin-top: 30px;">
+			<h:outputText value="Flash Cards Cadastrados"></h:outputText>
+		</h1>
+		<div
+			style="margin-top: 30px; margin-bottom: 40px; max-width: 1500px; width: 80%;">
+			<h:form>
+
+
+				<br />
+
+				<p:dataTable value="#{flashCardBean.obterFlashCards()}"
+					var="flashCard">
+					<p:column headerText="Id">
+						<h:outputText value="#{flashCard.id}" />
+					</p:column>
+
+					<p:column headerText="Termo">
+						<h:outputText value="#{flashCard.termo}" />
+					</p:column>
+
+					<p:column headerText="Definição">
+						<h:outputText value="#{flashCard.definicao}" />
+					</p:column>
+
+					<p:column headerText="Nível Aprendizado">
+						<center>
+							<h:outputText value="#{flashCard.nivelAprend}" />
+
+						</center>
+					</p:column>
+
+					<p:column headerText="Data Revisão">
+						<h:outputText value="#{flashCard.dataRepet}" />
+					</p:column>
+					<p:column headerText="Editar">
+						<center>
+							<h:commandButton class="btn btn-dark"
+								action="#{flashCardBean.editar(flashCard.id)}" value="Editar" />
+						</center>
+
+					</p:column>
+
+					<p:column headerText="Excluir">
+						<center>
+							<h:commandButton class="btn btn-danger"
+<<<<<<< HEAD
+								action="#{flashCardBean.excluir(flashCard.id)}"
+								onclick="return confirm('Deseja mesmo deletar esse flashcard?')"
+								value="Excluir" />
+=======
+								action="#{flashCardBean.excluir(flashCard.id)}" value="Excluir"
+								onclick="return confirm('Deseja mesmo deletar esse flash card?')" />
+>>>>>>> f2ec9425e9d9ca8f3dafef5199e251547d074dcb
+						</center>
+					</p:column>
+					<f:facet name="footer">
+						<h:commandButton class="btn btn-dark " value="Novo Flash Card"
+							action="#{flashCardBean.novo()}" />
+					</f:facet>
+					<f:facet name="footer">
+						<h:commandButton style="margin-left:30px;" class="btn btn-dark"
+							value="Revisar Cards" action="#{flashCardBean.revisar()}" />
+
+					</f:facet>
+				</p:dataTable>
+
+
+			</h:form>
+		</div>
+	</center>
+</h:body>
+</html>
