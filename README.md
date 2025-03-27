@@ -2,7 +2,7 @@
 
 CRUD feito através de JSF, JPA, Hibernate, PostgreSQL e Primefaces
 
-A página permitie ao usuário cadastrar flashcards para memorização inspirados no método de memorização por repetição espaçada (SRS).Os flashcards são compostos principalmente por um termo e sua definição. É possível também revisar os cards, e a depender do seu desenpenho o tempo em que você precisará revisar cada cartão é alterado.
+A página permitie ao usuário cadastrar flashcards para memorização inspirados no método de memorização por repetição espaçada (SRS). Os flashcards são compostos principalmente por um termo e sua definição. É possível também revisar os cards, e a depender do seu desempenho o tempo em que você precisará revisar cada cartão é alterado.
 
 ## Itens implementados
 
